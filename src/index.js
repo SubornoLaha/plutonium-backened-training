@@ -14,6 +14,7 @@ mongoose.connect("mongodb+srv://functionup-cohort:G0Loxqc9wFEGyEeJ@cluster0.rzot
 .then( () => console.log("MongoDb is connected"))
 .catch ( err => console.log(err) )
 
+// <<<<<<< HEAD
 // app.use (
 //     function (req, res, next) {
 //         console.log ("inside GLOBAL MW");
@@ -21,6 +22,26 @@ mongoose.connect("mongodb+srv://functionup-cohort:G0Loxqc9wFEGyEeJ@cluster0.rzot
 //   }
 //   );
   
+// =======
+
+
+
+// Write a middleware that logs (console.log) some data everytime any API is hit
+// Data to be logged:-the current timestamp(as date time) , the IP of the user and the route being requested).
+app.use (
+   
+       function (req,res,next){
+            var ip = req.connection.remoteAddress
+            let adate=new Date()
+            var ip1 = req.connection.remoteRoute
+            console.log ("inside GLOBAL MW");
+            console.log(ip,ip1,adate,req.originalUrl)
+        next()
+        }
+        
+  
+  );
+// >>>>>>> 6958a68 (done)
 
 app.use('/', route);
 

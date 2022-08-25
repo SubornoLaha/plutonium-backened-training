@@ -56,7 +56,11 @@ router.get('/register',  UserController.commonHandler, function(req, res){
 
 
 
+// <<<<<<< HEAD
 //router.get("/basicRoute", commonMW.mid1, commonMW.mid2, commonMW.mid3, commonMW.mid4, UserController.basicCode)
+// =======
+router.get("/basicRoute",  UserController.basicCode)
+// >>>>>>> 6958a68 (done)
 
 
 
